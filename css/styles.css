@@ -1,1 +1,66 @@
-/* developer styles go here */
+body {
+    font-family: sans-serif;
+}
+
+header {
+    max-width: 58rem;
+    margin: 0 auto;
+}
+
+/* Step 1: Style all the menu links hsowing on the smallest screen  */
+/* Text styling goes on the <a> tag to overwrite the browser style. Layout styles go on the <li> elements. */
+
+ul.menu {
+    background-color: #191919;
+}
+
+ul.menu a {
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    /* expand the clickable/tap area to fill the entire li, vs just the text itself  */
+    display: block;
+    padding: 1rem;
+}
+
+ul.menu a:hover,
+ul.menu a:active {
+    background-color: turquoise;
+    border-radius: 5px;
+}
+
+ul.dropdown-menu {
+    padding: 0 1rem;
+}
+
+ul.dropdown-menu a {
+    text-decoration: none;
+}
+
+/* Step 2: layout the links for the larger screen. style everything and then hide the second level nav  */
+@media (min-width: 40em) {
+    ul.menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    ul.menu li {
+        /* flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: auto; */
+        flex: 1 0 auto;
+        /* this forces the text to stay on one line, cannot wrap  */
+        white-space: nowrap;
+        /* text-align: center; */
+    }
+    /* Step 3: position and hide the dropdown menu  */
+  
+    /* remove the indent we wanted for the mobile screen  */
+    ul.dropdown-menu {
+        padding: 0;
+        position: absolute;
+    }
+
+    
+
+}
